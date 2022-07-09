@@ -20,7 +20,7 @@ const initalState = [
     completa: true
   },
   {
-  	id: 2,
+    id: 2,
     nome: 'HTML',
     completa: false,
   },
@@ -37,22 +37,36 @@ const initalState = [
 ]
 
 //Função Reducer sem immer
-const aulaReducer = (state = initalState, action) => {
-	switch(action.type) {
-		case COMPLETAR_AULA:
-			return {
-				...state,
-				completa: state.findIndex((item) => {
-					if(item.id === action.payload) {
-						if(state[completa]) {
-							state[completa].completa = true
-						}
-					}
-				})
-			}
-		default:
-			return state
-	}
-}
+/*const aulaReducer = (state = initalState, action) => {
+  switch (action.type) {
+    case COMPLETAR_AULA:
+      return state.map((aula) => {
+        if (action.payload === aula.id) {
+          return {
+            ...aula,
+            completa: true
+          }
+        } else {
+          return aula
+        }
+      })
+    case COMPLETAR_CURSO:
+      return state.map((aula) => {
+        return {
+          ...aula,
+          completa: true
+        }
+      })
+    case RESETAR_CURSO:
+      return state.map((aula) => {
+        return {
+          ...aula,
+          completa: false
+        }
+      })
+    default:
+      return state
+  }
+}*/
 
 export default aulaReducer
