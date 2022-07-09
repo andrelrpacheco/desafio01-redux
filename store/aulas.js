@@ -37,7 +37,7 @@ const initalState = [
 ]
 
 //Função Reducer sem immer
-/*const aulaReducer = (state = initalState, action) => {
+const aulaReducer = (state = initalState, action) => {
   switch (action.type) {
     case COMPLETAR_AULA:
       return state.map((aula) => {
@@ -67,6 +67,6 @@ const initalState = [
     default:
       return state
   }
-}*/
+}
 
 export default aulaReducer
